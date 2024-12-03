@@ -35,7 +35,7 @@ public class Main {
 
     static void menu() {
         System.out.println("""
-                    Please choose an option
+                    Please choose an option:
                     1) Look by title
                     2) Show searched books
                     3) Show searched authors
