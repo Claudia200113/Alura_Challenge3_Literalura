@@ -9,10 +9,7 @@ import com.alura.Literalura.dto.SearchDTO;
 import com.alura.Literalura.models.Author;
 import com.alura.Literalura.models.Book;
 
-import javax.sound.midi.Soundbank;
 import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
-import java.sql.SQLOutput;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -41,7 +38,7 @@ public class Main {
                     3) Show searched authors
                     4) Look authors (from your search) alive in a specific year 
                     5) Look books by language
-                    6) Show most downloaded books
+                    6) Show 5 most downloaded books
                     7) Exit
                     """);
     }
@@ -137,6 +134,7 @@ public class Main {
         System.out.println("Enter the year you want to search:");
 
         int year = scanner.nextInt();
+        scanner.nextLine();
 
        List<Author> authorsList = authorService.getAuthorsByYear(year);
 
@@ -165,7 +163,7 @@ public class Main {
 
                 System.out.println("Total books in that language: " + statistics.getCount());
                 System.out.println("Total downloads are: " + statistics.getSum());
-                System.out.println("Average downloads in that language are: " + statistics.getAverage());
+                System.out.println("Average downloads in that language are: \n" + statistics.getAverage());
             }else{
                 System.out.println("No books were found in that language");
             }
